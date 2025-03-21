@@ -56,9 +56,12 @@ cd ../SLSTATUS && sudo make clean install
 
 echo "Finalizing..."
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
-cp ~/documents/repos/zuparch/.bash ~/.bash
-
+cp -r ~/documents/repos/zuparch/.bash ~/
+. .bash/bash_prompt
+. .bash/bash_env
+. .bash/bash_aliases
+. .bash/bash_utils
 echo "systemctl --user enable opentabletdriver.service --now" >> ~/.bashrc
 . ~/.bashrc
 
-echo "You gotta take care of editing .xinitrc and enabling pacman color in /etc/pacman.conf, as well as creating an SSH key for github.
+echo "You gotta take care of editing .xinitrc and enabling pacman color in /etc/pacman.conf, as well as creating an SSH key for github."
