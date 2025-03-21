@@ -13,12 +13,15 @@ sudo bash -c 'echo "--latest 20" >> /etc/xdg/reflector/reflector.conf'
 sudo bash -c 'echo "--protocol https" >> /etc/xdg/reflector/reflector.conf'
 sudo bash -c 'echo "--sort rate" >> /etc/xdg/reflector/reflector.conf'
 sudo bash -c 'echo "--save /etc/pacman.d/mirrorlist" >> /etc/xdg/reflector/reflector.conf'
+sudo systemctl enable --now reflector.timer
+sudo systemctl enable --now reflector.service
+
 
 echo "Installing pacman packages..."
 sudo pacman -S --needed --noconfirm base-devel btop cronie discord dkms fastfetch fd feh firefox flameshot gamemode gdb gimp lib32-gamemode lib32-nvidia-utils linux-firmware lutris lxappearance mpv neovim nitrogen noto-fonts-emoji nvidia-dkms nvidia-settings nvidia-utils obsidian audacity dotnet-sdk godot kdenlive xorg picom pulsemixer qBittorrent reflector spotify-launcher steam sway thunar xarchiver thunar-archive-plugin tldr ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto-mono-nerd valgrind wget zip
 
 echo "Installing wine..."
-sudo pacman -S -needed --noconfirm wine-staging
+sudo pacman -S --needed --noconfirm wine-staging
 sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2-compat lib32-sdl2-compat
 
 echo "Installing Yay..."
