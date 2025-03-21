@@ -49,7 +49,7 @@ yay -S --needed --noconfirm colorpicker dark-icon-theme-git discord-screenaudio 
 echo "Setting up dwm..."
 cd ~/documents
 git clone https://github.com/ChrisBrinchLarsen/Suckless.git
-cd suckless/DWM && sudo make clean install
+cd Suckless/DWM && sudo make clean install
 cd ../DMENU && sudo make clean install 
 cd ../ST && sudo make clean install 
 cd ../SLSTATUS && sudo make clean install 
