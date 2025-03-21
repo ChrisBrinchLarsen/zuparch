@@ -27,13 +27,13 @@ sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-uti
 echo "Installing Yay..."
 sudo pacman -S --needed --noconfirm git base-devel
 cd ~
-if [ -d "./documents"]; then
+if [[ -d "./documents"]]; then
     cd documents
 else 
     mkdir documents
     cd documents
 fi
-if [ -d "./repos"]; then
+if [[ -d "./repos"]]; then
     cd repos
 else 
     mkdir repos
@@ -41,10 +41,10 @@ else
 fi
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si --noconfirm
-yay -Syu --mflags "--noconfirm"
+yay -Syu --noconfirm
 
 echo "Installing AUR packages"
-yay -S --needed --mflags "--noconfirm" colorpicker dark-icon-theme-git discord-screenaudio gtk-theme-material-black heroic-games-launcher-bin librewolf-bin obs-studio-git opentabletdriver video-downloader visual-studio-code-bin
+yay -S --needed --noconfirm colorpicker dark-icon-theme-git discord-screenaudio gtk-theme-material-black heroic-games-launcher-bin librewolf-bin obs-studio-git opentabletdriver video-downloader visual-studio-code-bin
 
 echo "Setting up dwm..."
 cd ~/documents
