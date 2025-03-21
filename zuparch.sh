@@ -41,10 +41,10 @@ else
 fi
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si --noconfirm
-yay -Syu --noconfirm
+yay -Syu --mflags "--noconfirm"
 
 echo "Installing AUR packages"
-yay -S --needed --noconfirm colorpicker dark-icon-theme-git discord-screenaudio gtk-theme-material-black heroic-games-launcher-bin librewolf-bin obs-studio-git opentabletdriver video-downloader visual-studio-code-bin
+yay -S --needed --mflags "--noconfirm" colorpicker dark-icon-theme-git discord-screenaudio gtk-theme-material-black heroic-games-launcher-bin librewolf-bin obs-studio-git opentabletdriver video-downloader visual-studio-code-bin
 
 echo "Setting up dwm..."
 cd ~/documents
